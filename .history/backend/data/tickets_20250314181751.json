@@ -1,0 +1,5 @@
+[
+  { "id": 1, "destino": "Buenos Aires", "precio": 100, "fecha": "2025-03-20" },
+  { "id": 2, "destino": "Córdoba", "precio": 80, "fecha": "2025-03-25" },
+  { "id": 3, "destino": "Rosario", "precio": 90, "fecha": "2025-03-22" }
+]

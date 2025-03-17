@@ -1,0 +1,5 @@
+[
+  { "id": 1, "origen": "Merlo", "destino": "Córdoba", "precio": 100, "fechaDesde": "2025-03-20", "fechaHasta": "2025-03-25", "horario": "mañana" },
+  { "id": 2, "origen": "Padua", "destino": "Mendoza", "precio": 80, "fechaDesde": "2025-03-22", "fechaHasta": "2025-03-26", "horario": "tarde" },
+  { "id": 3, "origen": "Merlo", "destino": "Salta", "precio": 90, "fechaDesde": "2025-03-23", "fechaHasta": "2025-03-27", "horario": "noche" }
+]

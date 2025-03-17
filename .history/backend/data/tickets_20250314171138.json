@@ -1,0 +1,6 @@
+[
+    { "id": 1, "destino": "Buenos Aires", "precio": 100 },
+    { "id": 2, "destino": "Córdoba", "precio": 80 },
+    { "id": 3, "destino": "Rosario", "precio": 90 }
+  ]
+  

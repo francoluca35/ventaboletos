@@ -1,0 +1,73 @@
+"use client";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { FaBars, FaTimes, FaHome, FaTicketAlt } from "react-icons/fa";
+
+const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [time, setTime] = useState(new Date());
+  const router = useRouter(); 
+
+  // Actualizar la hora cada segundo
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Formatear la hora
+  const formatTime = (date) => {
+    return date.toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" });
+  };
+
+  const formatDate = (date) => {
+    return date.toLocaleDateString("es-ES", { weekday: "long", day: "numeric" });
+  };
+
+  const handleNavigation = (path) => {
+    setIsOpen(false);
+    router.push(path);
+  };
+
+  return (
+    <div>
+      {/* Botón para abrir/cerrar Sidebar */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed top-4 left-4 z-50 text-white bg-red-600 p-3 rounded-full"
+      >
+        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
+
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-gray-300 text-black shadow-lg transition-transform ${
+          isOpen ? "translate-x-0" : "-translate-x-64"
+        } z-50`}
+      >
+        {/* Header del Sidebar */}
+        <div className="bg-gray-400 p-4 flex justify-between items-center">
+          <span className="text-lg font-bold">{formatDate(time)}, {formatTime(time)} PM</span>
+          <span className="font-semibold">Maurello S.A</span>
+        </div>
+
+        {/* Opciones de Navegación */}
+        <ul className="mt-4 space-y-4">
+          <li className="px-4 py-2 hover:bg-gray-500 cursor-pointer">
+            <button onClick={() => handleNavigation("/")} className="flex items-center gap-2 w-full text-left">
+              <FaHome /> Inicio
+            </button>
+          </li>
+          <li className="px-4 py-2 hover:bg-gray-500 cursor-pointer">
+            <button onClick={() => handleNavigation("/ventaboleto")} className="flex items-center gap-2 w-full text-left">
+              <FaTicketAlt /> Venta de Boletos
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;

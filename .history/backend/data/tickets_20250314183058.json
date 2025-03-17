@@ -1,0 +1,5 @@
+[
+  { "id": 1, "origen": "Buenos Aires", "destino": "Córdoba", "precio": 100, "fechaDesde": "2025-03-20", "fechaHasta": "2025-03-25" },
+  { "id": 2, "origen": "Rosario", "destino": "Mendoza", "precio": 80, "fechaDesde": "2025-03-22", "fechaHasta": "2025-03-26" },
+  { "id": 3, "origen": "Córdoba", "destino": "Salta", "precio": 90, "fechaDesde": "2025-03-23", "fechaHasta": "2025-03-27" }
+]
